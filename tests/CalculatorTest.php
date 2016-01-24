@@ -23,4 +23,10 @@ class CalculatorTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals(200, Calculator::add('198,2'));
 
 	}
+	public function testMultipleNumbers()
+	{
+		$this->assertEquals(6, Calculator::add('1,2,3'));
+		$this->assertEquals(50, Calculator::add('10,10,30'));
+
+	}
 }

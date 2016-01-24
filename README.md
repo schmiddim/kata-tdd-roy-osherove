@@ -3,3 +3,4 @@
 [Source](http://osherove.com/tdd-kata-1/)
 
 Done with Step 1
+Done with Step 2
