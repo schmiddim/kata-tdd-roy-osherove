@@ -10,15 +10,21 @@ class Calculator
 	const PATTERN_ADD_WITH_DELIMITER = '/\/\/.*\\n/';
 	const PATTERN_ADD_WITH_MULTIPLE_DELIMITERS = '/\/\/(\[.*\]){1,}\\n/';
 
+	/**
+	 * @param string $numbers
+	 * @return int
+	 * @throws \Exception
+	 */
 	public static function add($numbers)
 	{
 		if (empty($numbers)) {
 			return 0;
 		}
-		$numbers = self::getNormalizedString($numbers);
 
+		$numbers = self::getNormalizedString($numbers);
 		$numbers = preg_split('/,|\n/', $numbers);
 		$negatives = self::getNegativeValuesFromArray($numbers);
+
 		if (count($negatives) > 0) {
 			$message = 'negatives not allowed ';
 			$message .= implode(', ', $negatives);
@@ -80,8 +86,6 @@ class Calculator
 
 		} else {
 			return str_replace(';', ',', $string);
-
 		}
-
 	}
 }
