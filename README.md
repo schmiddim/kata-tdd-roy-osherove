@@ -12,3 +12,5 @@
 * Done with Step 5
 * Done with Step 6
 * Done with Step 7
+* Done with Step 8
+* Done with Step 9
