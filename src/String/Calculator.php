@@ -41,7 +41,11 @@ class Calculator
 		return $sum;
 	}
 
-	public static function getNegativeValuesFromArray($array)
+	/**
+	 * @param array $array
+	 * @return array
+	 */
+	public static function getNegativeValuesFromArray(array $array)
 	{
 		$negatives = array();
 		foreach ($array as $number) {
@@ -53,10 +57,10 @@ class Calculator
 		return $negatives;
 	}
 
-
 	/**
 	 * return 1,2,3,n
 	 * @param $string
+	 * @return string
 	 */
 	public static function getNormalizedString($string)
 	{
