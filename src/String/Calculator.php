@@ -16,11 +16,30 @@ class Calculator
 		}
 
 		$numbers = preg_split('/,|\n/', $numbers);
+		$negatives = self::getNegativeValuesFromArray($numbers);
+		if (count($negatives) > 0) {
+			$message = 'negatives not allowed ';
+			$message .= implode(', ', $negatives);
+			throw new \Exception($message);
+		}
 		$sum = 0;
 		foreach ($numbers as $number) {
-			$sum += intval($number);
+			$number = intval($number);
+			$sum += $number;
 		}
 		return $sum;
+	}
+
+	public static function getNegativeValuesFromArray($array)
+	{
+		$negatives = array();
+		foreach ($array as $number) {
+			$number = intval($number);
+			if ($number < 0) {
+				$negatives [] = $number;
+			}
+		}
+		return $negatives;
 	}
 
 	/**
