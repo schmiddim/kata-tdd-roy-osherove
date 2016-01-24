@@ -92,6 +92,7 @@ class CalculatorTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals(40, Calculator::add("//[--][++]\n4--33++3"));
 		$this->assertEquals(45, Calculator::add("//[--][++][,,]\n4--33++3,,5"));
 		$this->assertEquals(45, Calculator::add("//[-][++][,]\n4--33++3,5"));
+		$this->assertEquals(6, Calculator::add("//[*][%]\n1*2%3"));
 
 	}
 
