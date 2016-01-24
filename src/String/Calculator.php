@@ -61,9 +61,16 @@ class Calculator
 
 
 		if ($multipleDelimiterMatches > 0) {
-			$delimiter = trim(str_replace(['//', '[', ']'], '', $matchesForSimplePattern  [0]));
+			$delimiterString = trim(str_replace(['//', "\n"], '', $matchesForSimplePattern  [0]));
+
+			//Find the delimiters and remove brackets
+			$delimiterArray = preg_split('/\]\[/', $delimiterString);
+			array_walk($delimiterArray, function (&$item) {
+				$item = str_replace(['[', ']'], '', $item);
+			});
+
 			$numberString = preg_replace(self::PATTERN_ADD_WITH_DELIMITER, '', $string);
-			$numberString = str_replace($delimiter, ',', $numberString);
+			$numberString = str_replace($delimiterArray, ',', $numberString);
 			return $numberString;
 		} else if (count($matchesForSimplePattern) > 0) {
 			$delimiter = trim(str_replace(['//', "\n"], '', $matchesForSimplePattern  [0]));
