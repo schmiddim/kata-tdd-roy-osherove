@@ -40,13 +40,8 @@ class Calculator
 
 		$numberString = preg_replace(self::PATTERN_ADD_WITH_DELIMITER, '', $numberStringWithDirective);
 		$numberString = str_replace($delimiter, ',', $numberString);
-		return self::add($numberString);
-		$numbers = explode($delimiter, $numberString);
-		$sum = 0;
-		foreach ($numbers as $number) {
-			$sum += intval($number);
-		}
 
-		return $sum;
+		return self::add($numberString);
+
 	}
 }
