@@ -12,11 +12,11 @@ class Calculator
 		if (empty($numbers)) {
 			return 0;
 		}
-		$numbers = explode(',', $numbers);
 
-		$sum=0;
-		foreach($numbers as $number) {
-			$sum+= intval($number);
+		$numbers = preg_split('/,|\n/', $numbers);
+		$sum = 0;
+		foreach ($numbers as $number) {
+			$sum += intval($number);
 		}
 		return $sum;
 	}
