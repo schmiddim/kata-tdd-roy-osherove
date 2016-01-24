@@ -25,6 +25,9 @@ class Calculator
 		$sum = 0;
 		foreach ($numbers as $number) {
 			$number = intval($number);
+			if($number > 1000){
+				continue;
+			}
 			$sum += $number;
 		}
 		return $sum;
