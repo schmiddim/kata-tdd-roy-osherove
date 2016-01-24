@@ -1,0 +1,23 @@
+{
+  "name": "schmiddim string calculator",
+  "description": "My first kata - found at http://osherove.com/tdd-kata-1/",
+  "homepage": "http://www.radikalblogger.de",
+  "license": "GPL-3.0",
+  "autoload": {
+    "psr-0": {"String\\": "./src"}
+  },
+  "authors": [
+    {
+      "name": "Michael Schmitt",
+      "email": "schmiddim@gmx.at"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.5",
+    "league/climate": "^3.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.8.6"
+  }
+}
